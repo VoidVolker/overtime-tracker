@@ -6,7 +6,7 @@ Real world project example. Developed while completing RoR courses.
 
 ### Models
 - Post -> date:date, rationale:text
-- User -> Device
+✓ User -> Devise
 - Admin -> STI
 
 ### Features
