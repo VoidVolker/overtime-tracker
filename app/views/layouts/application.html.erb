@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="uk-container">
+      <%= render 'shared/nav' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
