@@ -20,7 +20,8 @@ Real world project example. Developed while completing RoR courses.
 
 - Device
 - Administrate
-- Bootstrap (Or UIKit and FontAwesome)
+- [✓] UIKit
+- FontAwesome
 - Twilio - sms
 - Dotenv
 - Capybara
