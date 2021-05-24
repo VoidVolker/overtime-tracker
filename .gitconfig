@@ -1,2 +1,2 @@
 [core]
-  editor = subl -n -w
+  editor = st -n -w
