@@ -1,5 +1,23 @@
-<ul uk-tab>
-    <li class="uk-active"><a href="#">Home</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Messages</a></li>
-</ul>
+<h1 class="uk-heading-small"><i class="far fa-clock"></i> Overtime Tracker</h1>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="<%= active?(root_path) %>">
+                <%= link_to "Home", root_path %>
+            </li>
+            <li class="<%= active?(posts_path) %>">
+                <%= link_to "Time entries", posts_path %>
+            </li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active">
+                <%= link_to "Edit Details", edit_user_registration_path %>
+            </li>
+            <li class="uk-active">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </li>
+        </ul>
+    </div>
+</nav>

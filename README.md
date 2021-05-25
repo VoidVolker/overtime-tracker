@@ -18,10 +18,14 @@ Real world project example. Developed while completing RoR courses.
 
 ### Libraries
 
-- Device
+- [✓] Device
 - Administrate
 - [✓] UIKit
-- FontAwesome
+- [✓] FontAwesome
 - Twilio - sms
 - Dotenv
 - Capybara
+
+### ToDo
+- Add fullname method for users
+- Refactor user association integration test in post_spec
