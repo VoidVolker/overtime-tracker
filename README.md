@@ -27,5 +27,4 @@ Real world project example. Developed while completing RoR courses.
 - Capybara
 
 ### ToDo
-- Add fullname method for users
 - Refactor user association integration test in post_spec
