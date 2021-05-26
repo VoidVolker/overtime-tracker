@@ -18,6 +18,7 @@ Real world project example. Developed while completing RoR courses.
 
 ### Libraries
 
+- [✓] FactoryBot
 - [✓] Device
 - Administrate
 - [✓] UIKit
