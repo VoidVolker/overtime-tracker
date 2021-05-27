@@ -21,8 +21,8 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      post1 = FactoryBot.create(:post)
-      post2 = FactoryBot.create(:second_post)
+      FactoryBot.create(:post)
+      FactoryBot.create(:second_post)
       visit posts_path
       expect(page).to have_content(/rationale1|rationale2/)
     end
@@ -33,6 +33,16 @@ describe 'navigate' do
       visit posts_path
 
       click_link('new_post_from_nav')
+      expect(page.status_code).to eq(200)
+    end
+  end
+
+  describe 'delete' do
+    it 'can be deleted' do
+      @post = FactoryBot.create(:post)
+      visit posts_path
+
+      click_link("delete_#{@post.id}")
       expect(page.status_code).to eq(200)
     end
   end
