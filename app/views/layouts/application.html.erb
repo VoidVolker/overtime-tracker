@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'app' %>
   </head>
 
   <body>
@@ -18,12 +19,7 @@
 
     <%= javascript_tag type: 'application/javascript' do %>
       <% flash.each do |type, msg| %>
-        UIkit.notification({
-            message: '<%= msg %>',
-            status: '<%= type %>-hivis',
-            pos: 'top-center',
-            timeout: 5000
-        });
+        APP.notification('<%= type %>', '<%= msg %>')
       <% end %>
     <% end %>
   </body>

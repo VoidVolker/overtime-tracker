@@ -3,6 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 //= require uikit
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -16,3 +17,4 @@ import "@fortawesome/fontawesome-free/css/all"
 import UIkit from "uikit/dist/js/uikit.min.js"
 import "uikit/dist/js/uikit-icons.min.js"
 window.UIkit = UIkit
+
