@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
 
-  <%= f.date_field :date %>
-  <%= f.text_area :rationale %>
-  <%= f.submit 'Save' %>
+  <%= f.date_field :date, class: 'uk-input uk-form-small uk-width-auto' %>
+  <%= f.text_area :rationale, class: 'uk-textarea uk-form-small uk-margin' %>
+  <%= f.submit 'Save', class: 'uk-button uk-button-primary uk-button-small' %>
 
 <% end %>
