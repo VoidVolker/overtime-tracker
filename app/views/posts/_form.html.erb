@@ -1,7 +1,17 @@
-<%= form_for @post do |f| %>
+<%= form_for @post, html: { class: 'uk-form-horizontal' } do |f| %>
+  <div>
+    <%= f.label :date, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.date_field :date, class: 'uk-input uk-form-small uk-width-auto' %>
+    </div>
+  </div>
 
-  <%= f.date_field :date, class: 'uk-input uk-form-small uk-width-auto' %>
-  <%= f.text_area :rationale, class: 'uk-textarea uk-form-small uk-margin' %>
-  <%= f.submit 'Save', class: 'uk-button uk-button-primary uk-button-small' %>
+  <div class="uk-margin">
+    <%= f.label :rationale, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.text_area :rationale, class: 'uk-textarea uk-form-small' %>
+    </div>
+  </div>
 
+  <%= f.submit 'Save', class: 'uk-button uk-button-primary uk-button' %>
 <% end %>
