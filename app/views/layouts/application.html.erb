@@ -15,5 +15,16 @@
       <%= render 'shared/nav' %>
       <%= yield %>
     </div>
+
+    <%= javascript_tag type: 'application/javascript' do %>
+      <% flash.each do |type, msg| %>
+        UIkit.notification({
+            message: '<%= msg %>',
+            status: '<%= type %>-hivis',
+            pos: 'top-center',
+            timeout: 5000
+        });
+      <% end %>
+    <% end %>
   </body>
 </html>
