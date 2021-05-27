@@ -17,9 +17,11 @@
       <%= yield %>
     </div>
 
-    <%= javascript_tag type: 'application/javascript' do %>
-      <% flash.each do |type, msg| %>
-        APP.notification('<%= type %>', '<%= msg %>')
+    <% if flash.any? %>
+      <%= javascript_tag type: 'application/javascript' do %>
+        <% flash.each do |type, msg| %>
+          APP.notification('<%= type %>', '<%= msg %>')
+        <% end %>
       <% end %>
     <% end %>
   </body>
