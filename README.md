@@ -19,13 +19,13 @@ Real world project example. Developed while completing RoR courses.
 ### Libraries
 
 - [✓] FactoryBot
-- [✓] Device
+- [✓] Devise
 - Administrate
 - [✓] UIKit
 - [✓] FontAwesome
 - Twilio - sms
 - Dotenv
-- Capybara
+- [✓] Capybara
 
 ### ToDo
 - Refactor user association integration test in post_spec
