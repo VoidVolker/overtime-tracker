@@ -14,6 +14,14 @@ class PostDashboard < Administrate::BaseDashboard
     rationale: Field::Text.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
+    # Howto: https://github.com/thoughtbot/administrate/issues/533#issuecomment-235689237
+    status: EnumField.with_options(searchable: false),
+    # status: Field::Select.with_options(
+    #   searchable: true,
+    #   collection: ->(field) {
+    #     field.resource.class.send(field.attribute.to_s.pluralize).keys
+    #   }
+    # ),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,8 +30,9 @@ class PostDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    user
     id
+    user
+    status
     date
     rationale
   ].freeze
@@ -32,6 +41,7 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     user
+    status
     id
     date
     rationale
@@ -44,6 +54,7 @@ class PostDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     user
+    status
     date
     rationale
   ].freeze

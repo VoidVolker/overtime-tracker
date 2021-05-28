@@ -1,5 +1,35 @@
 module Admin
   class PostsController < Admin::ApplicationController
+
+    # Didn't find how to make find_resource method to work
+    # Source: ~/.rvm/gems/ruby-3.0.0/gems/administrate-0.16.0/app/controllers/administrate/application_controller.rb
+    # TODO: find simple solution or make PR to Administrate for enum search and field
+    def index
+      authorize_resource(resource_class)
+      search_term = params[:search].to_s.strip
+
+      # Search by fullname of status
+      if Post.statuses.include?(search_term)
+        resources = Post.where(status: Post.statuses[search_term])
+      else # Default search
+        resources = Administrate::Search.new(scoped_resource,
+                                           dashboard_class,
+                                           search_term).run
+      end
+
+      resources = apply_collection_includes(resources)
+      resources = order.apply(resources)
+      resources = resources.page(params[:_page]).per(records_per_page)
+      page = Administrate::Page::Collection.new(dashboard, order: order)
+
+      render locals: {
+        resources: resources,
+        search_term: search_term,
+        page: page,
+        show_search_bar: show_search_bar?,
+      }
+    end
+
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
