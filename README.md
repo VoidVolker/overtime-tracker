@@ -20,7 +20,7 @@ Real world project example. Developed while completing RoR courses.
 
 - [✓] FactoryBot
 - [✓] Devise
-- Administrate
+- [✓] Administrate
 - [✓] UIKit
 - [✓] FontAwesome
 - Twilio - sms
