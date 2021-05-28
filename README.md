@@ -1,6 +1,6 @@
 # overtime-tracker
 
-Real world project example. Developed while completing RoR courses.
+Real world project example. Developed while completing RoR development guide.
 
 ## Initial requirements
 
