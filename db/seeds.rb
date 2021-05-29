@@ -1,5 +1,5 @@
 @user = User.create(
-  email: 'test@test.test',
+  email: 'test@t.t',
   password: '123456',
   password_confirmation: '123456',
   first_name: 'Alice',
@@ -7,7 +7,7 @@
 )
 
 @user_two = User.create(
-  email: 'test2@test.test',
+  email: 'test2@t.t',
   password: '123456',
   password_confirmation: '123456',
   first_name: 'User 2',
