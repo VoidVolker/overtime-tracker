@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   validates_presence_of :date, :rationale
 
   scope :with_status, ->(status) { where(status: Post.statuses[status]) }
+  scope :posts_by, ->(user) { where(user_id: user.id) }
 end

@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if admin_types.include?(current_user.type)
       @posts = Post.all
     else
-      @posts = current_user.posts
+      @posts = Post.posts_by(current_user)
     end
   end
 
