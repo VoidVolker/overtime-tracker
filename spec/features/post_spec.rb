@@ -77,10 +77,6 @@ describe 'navigate' do
   end
 
   describe 'edit' do
-    before do
-      @user1_post3 = FactoryBot.create(:post, user_id: @user1.id)
-    end
-
     it 'can be reached by clicking edit on index page' do
       visit posts_path
 
@@ -89,7 +85,7 @@ describe 'navigate' do
     end
 
     it 'can be edited' do
-      visit edit_post_path(@user1_post3)
+      visit edit_post_path(@user1_post2)
 
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Edited content'
