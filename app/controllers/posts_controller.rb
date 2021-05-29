@@ -50,6 +50,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize @post
     @post.delete
     redirect_to posts_path, success: 'Your post was deleted successfully'
   end

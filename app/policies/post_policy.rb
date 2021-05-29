@@ -4,10 +4,16 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user_id == user.id || admin_types.include?(user.type)
+    is_allowed?
   end
 
   def destroy?
-    record.user_id == user.id || admin_types.include?(user.type)
+    is_allowed?
   end
+
+  private
+
+    def is_allowed?
+      (record.user_id == user.id && !record.approved?) || admin_types.include?(user.type)
+    end
 end

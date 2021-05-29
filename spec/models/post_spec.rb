@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Post, type: :model do
-  describe 'Creation' do
+  describe 'creation' do
     before do
       @post = FactoryBot.create(:post)
     end
