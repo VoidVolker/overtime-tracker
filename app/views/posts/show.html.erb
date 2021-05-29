@@ -1,1 +1,40 @@
-<%= @post.inspect %>
+<h2 class="uk-heading-bullet">View post</h2>
+<div class="uk-margin uk-flex uk-flex-center">
+    <div class="uk-padding uk-card uk-card-default uk-card-small">
+        <table class="uk-table uk-table-divider">
+            <tr>
+                <td colspan="2">
+                    <h3 class="uk-text-bold"><%= @post.rationale %></h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Overtime Amount requested:</td>
+                <td><%= @post.overtime_request %></td>
+            </tr>
+            <tr>
+                <td>Employee:</td>
+                <td><%= @post.user.full_name %></td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td><%= @post.date %></td>
+            </tr>
+            <tr>
+                <td>Current Stage of Approval:</td>
+                <td class="uk-text-center"><%= status_label @post.status %></td>
+            </tr>
+        </table>
+
+        <div class="uk-button-group uk-margin uk-width-1-1">
+            <%= link_to('Edit', edit_post_path(@post), id: "edit_#{@post.id}", class: 'uk-button uk-button-default uk-width-expand') if policy(@post).update? %>
+            <%= link_to(
+                  'Delete',
+                  post_path(@post),
+                  method: :delete,
+                  id: "delete_#{@post.id}",
+                  data: { confirm: "Are you sure want to delete the post '#{@post.id}'?"},
+                  class: 'uk-button uk-button-danger uk-width-expand'
+                ) if policy(@post).destroy?  %>
+        </div>
+    </div>
+</div>
