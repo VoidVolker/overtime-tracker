@@ -10,11 +10,12 @@ module Admin
 
       # Search by fullname of status
       if Post.statuses.include?(search_term)
-        resources = Post.where(status: Post.statuses[search_term])
-      else # Default search
+        resources = Post.with_status(search_term).or(Post.where('rationale LIKE ?', "%#{search_term}%"))
+      else
+        # Default search
         resources = Administrate::Search.new(scoped_resource,
-                                           dashboard_class,
-                                           search_term).run
+                                             dashboard_class,
+                                             search_term).run
       end
 
       resources = apply_collection_includes(resources)
