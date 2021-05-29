@@ -5,7 +5,15 @@
   first_name: 'Alice',
   last_name: 'Carroll'
 )
-puts '1 user created'
+
+@user_two = User.create(
+  email: 'test2@test.test',
+  password: '123456',
+  password_confirmation: '123456',
+  first_name: 'User 2',
+  last_name: 'User 2'
+)
+puts '2 user created'
 
 AdminUser.create(
   email: 'admin@t.t',

@@ -22,10 +22,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def update
     @post = Post.find(params[:id])
+    authorize @post
+
     if @post.update(post_params)
       redirect_to @post, success: 'Your post was edited successfully'
     else
@@ -34,6 +37,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    # @post = Post.find(params[:id])
+    # authorize @post
   end
 
   def destroy

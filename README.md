@@ -31,3 +31,4 @@ Real world project example. Developed while completing RoR development guide.
 - Refactor user association integration test in post_spec
 - Refactor status view in post edit form
 - Refactor nav view
+- Add user friendly error views
