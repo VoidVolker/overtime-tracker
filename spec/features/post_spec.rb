@@ -4,10 +4,10 @@ describe 'navigate' do
   before do
     @user1 = FactoryBot.create(:user)
     @user1_post1 = FactoryBot.create(:post, user_id: @user1.id)
-    @user1_post2 = FactoryBot.create(:second_post, user_id: @user1.id)
+    @user1_post2 = FactoryBot.create(:post, user_id: @user1.id)
 
     @user2 = FactoryBot.create(:user)
-    @user2_post1 = FactoryBot.create(:second_post, user_id: @user2.id)
+    @user2_post1 = FactoryBot.create(:post, user_id: @user2.id)
 
     login_as(@user1, :scope => :user)
   end
@@ -27,7 +27,8 @@ describe 'navigate' do
 
     it 'has a list of posts' do
       visit posts_path
-      expect(page).to have_content(/rationale1|rationale2/)
+      expect(page).to have_content(@user1_post1.rationale)
+      expect(page).to have_content(@user1_post2.rationale)
     end
   end
 
