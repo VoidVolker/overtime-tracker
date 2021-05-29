@@ -7,6 +7,13 @@
   </div>
 
   <div class="uk-margin">
+    <%= f.label :overtime_request, class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+      <%= f.number_field :overtime_request, class: 'uk-input uk-form-small uk-width-auto', step: 0.1, min: 0.1 %>
+    </div>
+  </div>
+
+  <div class="uk-margin">
     <%= f.label :rationale, class: 'uk-form-label' %>
     <div class="uk-form-controls">
       <%= f.text_area :rationale, class: 'uk-textarea uk-form-small' %>

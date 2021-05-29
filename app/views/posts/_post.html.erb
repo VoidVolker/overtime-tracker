@@ -1,7 +1,8 @@
 <tr>
   <td><%= post.id %></td>
-  <td><%= post.date %></td>
   <td><%= post.user.full_name %></td>
+  <td><%= post.date %></td>
+  <td><%= post.overtime_request %></td>
   <td><%= truncate(post.rationale) %></td>
   <td class="uk-text-center"><%= status_label post.status %></td>
   <td>
