@@ -1,17 +1,38 @@
 <%= form_for @post, html: { class: 'uk-form-horizontal' } do |f| %>
-  <div>
-    <%= f.label :date, class: 'uk-form-label' %>
-    <div class="uk-form-controls">
-      <%= f.date_field :date, class: 'uk-input uk-form-small uk-width-auto' %>
+    <div class="uk-margin">
+      <%= f.label :date, class: 'uk-form-label' %>
+      <div class="uk-form-controls">
+        <%= f.date_field :date, class: 'uk-input uk-form-small uk-width-auto' %>
+      </div>
     </div>
-  </div>
 
-  <div class="uk-margin">
-    <%= f.label :rationale, class: 'uk-form-label' %>
-    <div class="uk-form-controls">
-      <%= f.text_area :rationale, class: 'uk-textarea uk-form-small' %>
+    <div class="uk-margin">
+      <%= f.label :rationale, class: 'uk-form-label' %>
+      <div class="uk-form-controls">
+        <%= f.text_area :rationale, class: 'uk-textarea uk-form-small' %>
+      </div>
     </div>
-  </div>
 
-  <%= f.submit 'Save', class: 'uk-button uk-button-primary' %>
+    <div class="uk-margin">
+      <%= f.label :status, class: 'uk-form-label' %>
+      <div class="uk-form-controls ">
+        <label class="uk-margin-right">
+          <%= f.radio_button :status, 'submitted', class: 'uk-radio' %>
+          Submitted
+        </label>
+
+        <label class="uk-margin-right">
+          <%= f.radio_button :status, 'approved', class: 'uk-radio' %>
+          Approved
+        </label>
+
+        <label>
+          <%= f.radio_button :status, 'rejected', class: 'uk-radio' %>
+          Rejected
+        </label>
+      </div>
+    </div>
+
+    <%= f.submit 'Save', class: 'uk-button uk-button-primary' %>
+
 <% end %>

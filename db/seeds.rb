@@ -17,11 +17,11 @@ AdminUser.create(
 puts '1 admin user created'
 
 
-100.times do |post|
+10.times do |post|
   Post.create!(
     date: Date.today,
     rationale: "#{post} rationale content",
     user_id: @user.id
   )
 end
-puts '100 Posts have been created'
+puts '10 Posts have been created'
