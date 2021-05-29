@@ -1,0 +1,11 @@
+<div class="uk-margin">
+  <%= f.label :status, class: 'uk-form-label' %>
+  <div class="uk-form-controls ">
+    <% Post.statuses.each do |status, n| %>
+      <label class="uk-margin-right">
+        <%= f.radio_button :status, status, class: 'uk-radio' %>
+        <%= status.camelize %>
+      </label>
+    <% end %>
+  </div>
+</div>

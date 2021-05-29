@@ -29,3 +29,4 @@ Real world project example. Developed while completing RoR development guide.
 
 ### ToDo
 - Refactor user association integration test in post_spec
+- Refactor status view in post edit form
