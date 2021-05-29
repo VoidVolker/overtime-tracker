@@ -1,8 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :show, :update, :destroy]
 
+  def admin_types
+    ['AdminUser']
+  end
+
   def index
-    @posts = Post.all
+    if admin_types.include?(current_user.type)
+      @posts = Post.all
+    else
+      @posts = current_user.posts
+    end
   end
 
   def new

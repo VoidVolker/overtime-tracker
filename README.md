@@ -32,3 +32,5 @@ Real world project example. Developed while completing RoR development guide.
 - Refactor status view in post edit form
 - Refactor nav view
 - Add user friendly error views
+- Refactor testing of user type (admin_types)
+- Update list of posts: admin can see column "user" and user can't see thie column
