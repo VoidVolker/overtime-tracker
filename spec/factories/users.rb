@@ -7,6 +7,7 @@ FactoryBot.define do
     first_name { 'Alice' }
     last_name { 'Carroll' }
     email { generate :email }
+    phone { '12345' }
     password { '123456' }
     password_confirmation { '123456' }
   end
@@ -15,6 +16,7 @@ FactoryBot.define do
     first_name { 'Admin' }
     last_name { 'User' }
     email { generate :email }
+    phone { '12345' }
     password { '123456' }
     password_confirmation { '123456' }
   end

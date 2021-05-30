@@ -3,7 +3,8 @@
   password: '123456',
   password_confirmation: '123456',
   first_name: 'Alice',
-  last_name: 'Carroll'
+  last_name: 'Carroll',
+  phone: '12345'
 )
 
 @user_two = User.create(
@@ -11,7 +12,8 @@
   password: '123456',
   password_confirmation: '123456',
   first_name: 'User 2',
-  last_name: 'User 2'
+  last_name: 'User 2',
+  phone: '12345'
 )
 puts '2 user created'
 
@@ -20,7 +22,8 @@ AdminUser.create(
   password: '123456',
   password_confirmation: '123456',
   first_name: 'Admin',
-  last_name: 'Admin'
+  last_name: 'Admin',
+  phone: '12345'
 )
 puts '1 admin user created'
 

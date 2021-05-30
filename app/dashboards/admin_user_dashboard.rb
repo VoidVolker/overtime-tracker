@@ -13,6 +13,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     password: Field::String.with_options(searchable: false),
     first_name: Field::String.with_options(searchable: true),
     last_name: Field::String.with_options(searchable: true),
+    phone: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
   }.freeze
@@ -25,6 +26,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     email
+    phone
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,6 +36,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     email
     first_name
     last_name
+    phone
     created_at
     updated_at
   ].freeze
@@ -46,6 +49,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     password
     first_name
     last_name
+    phone
   ].freeze
 
   # FORM_ATTRIBUTES = %i[
