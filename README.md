@@ -26,6 +26,8 @@ Real world project example. Developed while completing RoR development guide.
 - Twilio - sms
 - Dotenv
 - [✓] Capybara
+- [✓] DotEnv
+
 
 ### ToDo
 - Refactor user association integration test in post_spec
@@ -35,3 +37,12 @@ Real world project example. Developed while completing RoR development guide.
 - Refactor testing of user type (admin_types)
 - Update list of posts: admin can see column "user" and user can't see thie column
 - Remove edit/delete for approved posts
+
+## Cretendtials for twilio
+
+`./.env`
+```
+TWILIO_ACCOUNT_SID=YOURACCOUNTSID
+TWILIO_AUTH_TOKEN=YOURAUTHTOKEN
+TWILIO_PHONE_NUMBER=+11111111111
+```
