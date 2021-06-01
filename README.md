@@ -26,7 +26,7 @@ Real world project example. Developed while completing RoR development guide.
 - [✓] Administrate
 - [✓] UIKit
 - [✓] FontAwesome
-- [✓]Twilio - sms
+- [✓] Twilio - sms
 - [✓] Dotenv
 - [✓] Capybara
 
@@ -37,7 +37,7 @@ Real world project example. Developed while completing RoR development guide.
 - Add user friendly error views
 - Refactor testing of user type (admin_types)
 - Update list of posts: admin can see column "user" and user can't see thie column
-- Remove edit/delete for approved posts
+- Refactor table views to use universal helpers
 
 ## Cretendtials for twilio
 
