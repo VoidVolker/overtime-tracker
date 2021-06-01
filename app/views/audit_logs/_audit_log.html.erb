@@ -3,5 +3,5 @@
   <td><%= audit_log.user.full_name %></td>
   <td><%= audit_log.started %></td>
   <td><%= audit_log.ended %></td>
-  <td><%= audit_log.status %></td>
+  <td class="uk-text-center"><%= status_label audit_log.status, 'uk-align-center' %></td>
 </tr>

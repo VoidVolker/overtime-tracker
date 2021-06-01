@@ -1,7 +1,4 @@
 module PostsHelper
-  def status_label status, tag_class = ''
-    content_tag(:span, status, class: "#{PostsHelper.status_styles[status]} #{tag_class}")
-  end
 
   # def save_link_to path, id
   #   PostsHelper.icon_link_to(
@@ -62,13 +59,6 @@ module PostsHelper
   end
 
   private
-    def self.status_styles
-      Hash[
-        'submitted' => 'uk-label',
-        'approved' => 'uk-label uk-label-success',
-        'rejected' => 'uk-label uk-label-warning'
-      ]
-    end
 
     def self.delete_confirmation id, record_type
       { confirm: "Are you sure want to delete the #{record_type} \##{id}?"}
