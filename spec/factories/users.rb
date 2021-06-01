@@ -3,8 +3,12 @@ FactoryBot.define do
     "test#{n}@test.com"
   end
 
+  sequence :user_name do |n|
+    "Alice №#{n}"
+  end
+
   factory :user do
-    first_name { 'Alice' }
+    first_name { generate :user_name }
     last_name { 'Carroll' }
     email { generate :email }
     phone { '1234567890' }
@@ -14,7 +18,7 @@ FactoryBot.define do
 
   factory :admin_user, class: 'AdminUser' do
     first_name { 'Admin' }
-    last_name { 'User' }
+    last_name { 'Admin' }
     email { generate :email }
     phone { '1234567890' }
     password { '123456' }

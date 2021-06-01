@@ -38,7 +38,7 @@ describe User, type: :model do
 
   describe 'custom name methods' do
     it 'has a full name that combines first and lest name' do
-      expect(@user.full_name).to eq('Carroll, Alice')
+      expect(@user.full_name).to eq("#{@user.last_name}, #{@user.first_name}")
     end
   end
 end

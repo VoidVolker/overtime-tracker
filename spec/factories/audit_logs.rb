@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :audit_log do
-    user { nil }
-    status { 1 }
-    started { "2021-05-31" }
-    ended { "2021-05-31" }
+    user
+    # status { 0 }
+    # started { Date.today.prev_occurring(:monday) }
+    # ended { nil }
   end
 end
