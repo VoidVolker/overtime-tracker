@@ -34,8 +34,8 @@ class ApplicationPolicy
     false
   end
 
-  def admin_types
-    ['AdminUser']
+  def is_admin?
+    admin_types.include?(user.type)
   end
 
   class Scope
@@ -50,4 +50,9 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+  private
+    def admin_types
+      ['AdminUser']
+    end
 end

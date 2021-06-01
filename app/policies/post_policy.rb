@@ -1,6 +1,6 @@
 class PostPolicy < ApplicationPolicy
   def index?
-    admin_types.include?(user.type)
+    is_admin?
   end
 
   def update?
@@ -14,6 +14,6 @@ class PostPolicy < ApplicationPolicy
   private
 
     def is_allowed?
-      (record.user_id == user.id && !record.approved?) || admin_types.include?(user.type)
+      (record.user_id == user.id && !record.approved?) || is_admin?
     end
 end
