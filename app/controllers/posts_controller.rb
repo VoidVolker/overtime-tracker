@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
   def index
     if admin_types.include?(current_user.type)
-      @posts = Post.all
+      @posts = Post.all.page(params[:page])
     else
-      @posts = Post.posts_by(current_user)
+      @posts = Post.posts_by(current_user).page(params[:page])
     end
   end
 

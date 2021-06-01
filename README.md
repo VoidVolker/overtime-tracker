@@ -24,11 +24,13 @@ Real world project example. Developed while completing RoR development guide.
 - [✓] FactoryBot
 - [✓] Devise
 - [✓] Administrate
-- [✓] UIKit
-- [✓] FontAwesome
 - [✓] Twilio - sms
 - [✓] Dotenv
 - [✓] Capybara
+- [✓] Pundit
+- [✓] Kaminari
+- [✓] UIKit
+- [✓] FontAwesome
 
 ### ToDo
 
