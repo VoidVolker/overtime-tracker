@@ -14,7 +14,7 @@ Real world project example. Developed while completing RoR development guide.
 ### Features
 
 - Approval worflow
-- [✓] SMS Messages -> link to approval logtime (TODO: inegrate with Heroku scheduler and turn)
+- [✓] SMS Messages -> link to approval logtime (TODO: inegrate with Heroku scheduler and uncomment the code)
 - [✓] Admin dashboard
 - Email summary to managers for approval
 - Needs to be documented if employee did not log overtime
@@ -40,6 +40,7 @@ Real world project example. Developed while completing RoR development guide.
 - Refactor testing of user type (admin_types)
 - Update list of posts: admin can see column "user" and user can't see thie column
 - Refactor table views to use universal helpers
+- Fix uikit CSS loading for administrate template
 
 ## Cretendtials for twilio
 
