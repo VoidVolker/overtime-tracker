@@ -20,6 +20,6 @@
     </div>
   </div>
 
-  <%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
+  <%= render partial: 'status', locals: { f: f } if Admin.is? current_user %>
   <%= f.submit 'Save', class: 'uk-button uk-button-primary' %>
 <% end %>

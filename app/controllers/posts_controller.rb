@@ -1,12 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :show, :update, :destroy]
 
-  def admin_types
-    ['AdminUser']
-  end
-
   def index
-    if admin_types.include?(current_user.type)
+    if Admin.is? current_user
       @posts = Post.all.page(params[:page])
     else
       @posts = Post.posts_by(current_user).page(params[:page])

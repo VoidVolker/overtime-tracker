@@ -1,1 +1,5 @@
-<h2 class="uk-heading-bullet">Home <i class="fab fa-freebsd"></i></h2>
+<% if Admin.is? current_user %>
+  <%= render 'admin' %>
+<% else %>
+  <%= render 'employee' %>
+<% end %>

@@ -17,7 +17,7 @@
     </div>
     <div class="uk-navbar-right">
       <ul class="uk-navbar-nav">
-        <% if current_user.type == 'AdminUser' %>
+        <% if Admin.is? current_user %>
           <li class="uk-active">
             <%= link_to 'Admin Dashboard', admin_root_path %>
           </li>

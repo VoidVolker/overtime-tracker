@@ -1,6 +1,5 @@
 class AuditLogPolicy < ApplicationPolicy
   def index?
-    # is_admin?
-    admin_types.include?(user.type)
+    Admin.is? user
   end
 end

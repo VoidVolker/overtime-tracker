@@ -37,8 +37,7 @@ Real world project example. Developed while completing RoR development guide.
 - Refactor user association integration test in post_spec
 - Refactor nav view
 - Add user friendly error views
-- Refactor testing of user type (admin_types)
-- Update list of posts: admin can see column "user" and user can't see thie column
+- Update list of posts: admin can see column "user" and user can't see this column
 - Refactor table views to use universal helpers
 - Fix uikit CSS loading for administrate template
 
