@@ -1,4 +1,4 @@
-<% if Admin.is? current_user %>
+<% if is_admin? %>
   <%= render 'admin' %>
 <% else %>
   <%= render 'employee' %>

@@ -1,5 +1,5 @@
 class AuditLogPolicy < ApplicationPolicy
   def index?
-    Admin.is? user
+    ApplicationHelper.is_admin? user
   end
 end

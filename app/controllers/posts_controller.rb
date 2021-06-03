@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :show, :update, :destroy]
 
   def index
-    if Admin.is? current_user
+    if ApplicationHelper.is_admin? current_user
       @posts = Post.all.page(params[:page])
     else
       @posts = Post.posts_by(current_user).page(params[:page])
