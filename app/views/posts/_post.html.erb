@@ -3,7 +3,11 @@
   <td><%= post.user.full_name %></td>
   <td><%= post.date %></td>
   <td><%= post.overtime_request %></td>
-  <td><%= link_to truncate(post.rationale), post %></td>
+  <td>
+    <span class="uk-text-truncate" uk-tooltip="<%= post.rationale %>">
+      <%= link_to post.rationale, post %>
+    </span>
+  </td>
   <td class="uk-text-center"><%= status_label post.status, 'uk-align-center' %></td>
   <td class="uk-text-center">
     <%= edit_link_to edit_post_path(post), post.id if policy(post).update? %>

@@ -1,1 +1,20 @@
-<h2 class="uk-heading-bullet">Admin</h2>
+<h2 class="uk-heading-bullet">Pending approvals</h2>
+
+<table class="uk-table uk-table-striped uk-table-hover uk-table-small uk-table-middle">
+  <thead>
+    <tr>
+      <th class="uk-table-shrink">#</th>
+      <th>User</th>
+      <th>Date</th>
+      <th class="uk-table-shrink">Overtime</th>
+      <th class="uk-table-expand">Rationale</th>
+      <th class="uk-table-shrink">Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="pending-approvals">
+    <% @pending_approvals.each do |pending_approval| %>
+      <%= render partial: 'pending_approval', locals: { pending_approval: pending_approval } %>
+    <% end %>
+  </tbody>
+</table>

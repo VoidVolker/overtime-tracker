@@ -6,4 +6,9 @@ class Post < ApplicationRecord
 
   scope :with_status, ->(status) { where(status: Post.statuses[status]) }
   scope :posts_by, ->(user) { where(user_id: user.id) }
+
+  def to_json(options={})
+    options[:except] ||= [:user_id]
+    super(options)
+  end
 end

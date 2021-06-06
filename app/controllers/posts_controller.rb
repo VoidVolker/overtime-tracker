@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :show, :update, :destroy]
+  before_action :set_post, only: [:show, :show, :update, :destroy, :approve]
 
   def index
     if ApplicationHelper.is_admin? current_user
@@ -7,6 +7,11 @@ class PostsController < ApplicationController
     else
       @posts = Post.posts_by(current_user).page(params[:page])
     end
+  end
+
+  def approve
+    @post.approved!
+    render json: @post.as_json(except: :user_id)
   end
 
   def new

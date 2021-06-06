@@ -1,0 +1,15 @@
+<tr class="approval">
+  <td><%= pending_approval.id %></td>
+  <td><%= pending_approval.user.full_name %></td>
+  <td><%= pending_approval.date %></td>
+  <td><%= pending_approval.overtime_request %></td>
+  <td uk-tooltip="<%= pending_approval.rationale %>">
+    <span class="uk-text-truncate">
+      <%= link_to pending_approval.rationale, pending_approval %>
+    </span>
+  </td>
+  <td class="uk-text-center"><%= status_label pending_approval.status, 'uk-align-center' %></td>
+  <td class="uk-text-center">
+    <button class="approve-post uk-button uk-button-default uk-button-small" data-id="<%= pending_approval.id %>" data-path="<%= approve_post_path pending_approval %>" id="approve_<%=  pending_approval.id %>">Approve</button>
+  </td>
+</tr>

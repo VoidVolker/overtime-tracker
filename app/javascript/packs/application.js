@@ -14,7 +14,13 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "@fortawesome/fontawesome-free/css/all"
+
 import UIkit from "uikit/dist/js/uikit.min.js"
 import "uikit/dist/js/uikit-icons.min.js"
 window.UIkit = UIkit
+// window.$ = UIkit.util.$
+// window.$$ = UIkit.util.$$
 
+import jQuery from "jquery/dist/jquery.min.js"
+window.$ = jQuery
+window.jQuery = jQuery
