@@ -1,0 +1,5 @@
+<div class="uk-card uk-card-default uk-card-body uk-margin-rigth uk-margin-left uk-margin-bottom">
+  <h3 class="uk-card-title"><%= pending_confirmation.started %> - <%= pending_confirmation.started + 1.weeks %></h3>
+  <p>I confirm that I did not perform any overtime</p>
+  <button class="confirm-log uk-button uk-button-primary uk-button-small uk-width-expand" data-id="<%= pending_confirmation.id %>" data-path="" id="confirm_<%= pending_confirmation.id %>">Confirm</button>
+</div>

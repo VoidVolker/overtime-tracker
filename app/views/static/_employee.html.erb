@@ -1,1 +1,6 @@
-<h2 class="uk-heading-bullet">Employee</h2>
+<h2 class="uk-heading-bullet">Pending your confirmation</h2>
+<div class="uk-flex uk-flex-stretch uk-flex-center uk-flex-wrap">
+  <% @pending_confirmations.each do |pending_confirmation| %>
+    <%= render partial: 'pending_confirmations', locals: { pending_confirmation: pending_confirmation } %>
+  <% end %>
+</div>

@@ -27,9 +27,8 @@ AdminUser.create!(
 )
 puts '1 admin user created'
 
-items_count = 100
-
-items_count.times do |post|
+posts_count = 100
+posts_count.times do |post|
   Post.create!(
     date: Date.today,
     rationale: "#{post} rationale content",
@@ -37,11 +36,15 @@ items_count.times do |post|
     overtime_request: 2.5
   )
 end
-puts "#{items_count} Posts have been created"
+puts "#{posts_count} Posts have been created"
 
-items_count.times do |post|
+logs_count = 10
+log_date = Date.today - logs_count.weeks
+logs_count.times do |post|
   AuditLog.create!(
-    user_id: @user.id
+    user_id: @user.id,
+    started: log_date
   )
+  log_date += 1.week
 end
-puts "#{items_count} Audit logs have been created"
+puts "#{logs_count} Audit logs have been created"
