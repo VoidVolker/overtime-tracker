@@ -3,7 +3,7 @@ class StaticController < ApplicationController
     if is_admin?
       @pending_approvals = Post.submitted
     else
-      @pending_confirmations = current_user.audit_logs.order(:started)
+      @pending_confirmations = current_user.audit_logs.pending.order(:started)
     end
   end
 end

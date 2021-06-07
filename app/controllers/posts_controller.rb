@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def approve
     authorize @post
     @post.approved!
-    render json: @post.as_json(except: :user_id)
+    render json: @post.as_json
   end
 
   def new

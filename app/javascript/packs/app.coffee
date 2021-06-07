@@ -26,9 +26,27 @@ class Application
 
 class HomePage
     constructor: ->
-        #
+        confirmationsCnt = $ '#pending-confirmations'
         approvalsCnt = $ '#pending-approvals'
-        if approvalsCnt.length
+
+        # For employee
+        if confirmationsCnt.length is 1
+            confirmations = $ '.confirmation', confirmationsCnt
+            for confirmation in confirmations
+                confirmationBtn = $ '.confirm-audit-log', confirmation
+                confirmationBtn.click ->
+                    btn = @
+                    btn$ = $ @
+                    path = btn$.data 'path'
+                    UIkit.modal.confirm('Are you sure you want to confirm that you did not perform any overtime?').then(
+                        ->
+                            $.get( path, (post) ->
+                                btn$.prop 'disabled', true
+                            ).fail ->
+                                APP.notification 'danger', 'Post approving failed'
+                    )
+        # For admin
+        else if approvalsCnt.length is 1
             approvals = $ '.approval', approvalsCnt
             for approval in approvals
                 approveBtn = $ '.approve-post', approval
@@ -37,15 +55,12 @@ class HomePage
                     btn = @
                     btn$ = $ @
                     path = btn$.data 'path'
-                    # console.log path, btn.label
                     $.get( path, (post) ->
-                        console.log 'post', post
                         btn.label.removeClass 'uk-label-warning'
                         btn.label.addClass 'uk-label-success'
                         btn.label.text post.status
                     ).fail ->
                         APP.notification 'danger', 'Post approving failed'
-
 
 
 $ -> window.APP = new Application
