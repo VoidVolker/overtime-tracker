@@ -11,6 +11,10 @@ class PostPolicy < ApplicationPolicy
     is_allowed?
   end
 
+  def approve?
+    ApplicationHelper.is_admin? user
+  end
+
   private
 
     def is_allowed?
