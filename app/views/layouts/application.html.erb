@@ -20,7 +20,7 @@
     <% if flash.any? %>
       <%= javascript_tag type: 'application/javascript' do %>
         <% flash.each do |type, msg| %>
-          APP.notification('<%= type %>', '<%= msg %>')
+          Notification('<%= type %>', '<%= msg %>')
         <% end %>
       <% end %>
     <% end %>

@@ -7,23 +7,6 @@ class Application
         switch window.location.pathname
             when '/' then @page = new HomePage
 
-    notification: (type, msg, timeout = Application.default.notification.timeout) ->
-        switch type
-            when 'success' then icon = 'check'
-            when 'warning' then icon = 'exclamation'
-            when 'danger'  then icon = 'exclamation-triangle'
-            else # 'alert' type or something else can be
-                type = 'primary'
-                icon = 'bell'
-
-        UIkit.notification({
-            message: "<i class=\"fas fa-#{icon}\"></i>&nbsp;&nbsp;#{msg}",
-            status: "#{type}-hivis",
-            pos: 'top-center',
-            timeout: timeout
-        });
-        @
-
 class HomePage
     constructor: ->
         confirmationsCnt = $ '#pending-confirmations'
@@ -43,7 +26,7 @@ class HomePage
                             $.get( path, (post) ->
                                 btn$.prop 'disabled', true
                             ).fail ->
-                                APP.notification 'danger', 'Post approving failed'
+                                Notification 'danger', 'Post approving failed'
                     )
         # For admin
         else if approvalsCnt.length is 1
@@ -60,7 +43,24 @@ class HomePage
                         btn.label.addClass 'uk-label-success'
                         btn.label.text post.status
                     ).fail ->
-                        APP.notification 'danger', 'Post approving failed'
+                        Notification 'danger', 'Post approving failed'
+
+window.Notification = Notification = (type, msg, timeout = Application.default.notification.timeout) ->
+    switch type
+        when 'success' then icon = 'check'
+        when 'warning' then icon = 'exclamation'
+        when 'danger'  then icon = 'exclamation-triangle'
+        else # 'alert' type or something else can be
+            type = 'primary'
+            icon = 'bell'
+
+    UIkit.notification(
+        message: "<i class=\"fas fa-#{icon}\"></i>&nbsp;&nbsp;#{msg}"
+        status: "#{type}-hivis"
+        pos: 'top-center'
+        timeout: timeout
+    )
+
 
 
 $ -> window.APP = new Application
