@@ -1,6 +1,9 @@
 class StaticController < ApplicationController
   def home
-    @pending_approvals = Post.submitted
+    if is_admin?
+      @pending_approvals = Post.submitted
+    else
 
+    end
   end
 end

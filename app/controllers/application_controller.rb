@@ -7,10 +7,22 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  def self.is_admin?(user)
+    ApplicationController.admin_types.include?(user.try(:type))
+  end
+
+  def is_admin?
+    ApplicationController.admin_types.include?(current_user.try(:type))
+  end
+
   private
 
     def user_not_authorized
       flash[:danger] = "You are not authorized to perform this action."
       redirect_to(request.referrer || root_path)
+    end
+
+    def self.admin_types
+      ['AdminUser']
     end
 end
