@@ -1,4 +1,4 @@
-<h2 class="uk-heading-bullet">View post</h2>
+<h2 class="uk-heading-bullet">View overtime request</h2>
 <div class="uk-margin uk-flex uk-flex-center">
   <div class="uk-padding uk-card uk-card-default uk-card-small">
     <table class="uk-table uk-table-divider">
@@ -11,10 +11,12 @@
         <td>Overtime Amount requested:</td>
         <td><%= @post.overtime_request %></td>
       </tr>
-      <tr>
-        <td>Employee:</td>
-        <td><%= @post.user.full_name %></td>
-      </tr>
+      <% if is_admin? %>
+        <tr>
+          <td>Employee:</td>
+          <td><%= @post.user.full_name %></td>
+        </tr>
+      <% end %>
       <tr>
         <td>Date:</td>
         <td><%= @post.date %></td>

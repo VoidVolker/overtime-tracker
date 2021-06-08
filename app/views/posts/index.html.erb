@@ -1,9 +1,11 @@
-<h2 class="uk-heading-bullet">Posts</h2>
+<h2 class="uk-heading-bullet">Overtime requests</h2>
 <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
   <thead>
     <tr>
       <th class="uk-table-shrink">#</th>
-      <th>User</th>
+      <% if is_admin? %>
+        <th>User</th>
+      <% end %>
       <th>Date</th>
       <th class="uk-table-shrink">Overtime</th>
       <th class="uk-table-expand">Rationale</th>

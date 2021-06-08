@@ -1,6 +1,8 @@
 <tr>
   <td><%= post.id %></td>
-  <td><%= post.user.full_name %></td>
+  <% if is_admin? %>
+    <td><%= post.user.full_name %></td>
+  <% end %>
   <td><%= post.date %></td>
   <td><%= post.overtime_request %></td>
   <td>
