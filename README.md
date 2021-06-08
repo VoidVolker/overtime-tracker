@@ -9,11 +9,11 @@ Real world project example. Developed while completing RoR development guide.
 - [✓] Post -> date:date, rationale:text
 - [✓] User -> Devise
 - [✓] Admin -> STI
-- Auditlog - keep track of if a employee had overtime or not.
+- [✓] Auditlog - keep track of if a employee had overtime or not.
 
 ### Features
 
-- Approval worflow
+- [✓] Approval worflow
 - [✓] SMS Messages -> link to approval logtime (TODO: inegrate with Heroku scheduler and uncomment the code)
 - [✓] Admin dashboard
 - Email summary to managers for approval
@@ -21,6 +21,7 @@ Real world project example. Developed while completing RoR development guide.
 
 ### Libraries
 
+Backend:
 - [✓] FactoryBot
 - [✓] Devise
 - [✓] Administrate
@@ -29,8 +30,11 @@ Real world project example. Developed while completing RoR development guide.
 - [✓] Capybara
 - [✓] Pundit
 - [✓] Kaminari
+
+Front end:
 - [✓] UIKit
 - [✓] FontAwesome
+- [✓] jQuery
 
 ### ToDo
 
