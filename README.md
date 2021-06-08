@@ -21,7 +21,7 @@ Real world project example. Developed while completing RoR development guide.
 
 ### Libraries
 
-Backend:
+Back end:
 - [✓] FactoryBot
 - [✓] Devise
 - [✓] Administrate
