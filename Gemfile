@@ -16,20 +16,20 @@ gem 'rexml'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 6.2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 4.1.0'
+  gem 'web-console'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler'
+  gem 'listen'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'solargraph'
@@ -47,9 +47,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'devise', '~> 4.8'
-gem 'administrate', '~> 0.16.0'
+gem 'devise'
+gem 'administrate'
 gem 'bourbon'
-gem 'pundit', '~> 2.1'
-gem 'twilio-ruby', '~> 4.11', '>= 4.11.1'
-gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'pundit'
+gem 'twilio-ruby'
+gem 'kaminari'
