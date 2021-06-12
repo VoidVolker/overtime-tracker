@@ -4,7 +4,7 @@
     <div class="uk-navbar-left">
       <ul class="uk-navbar-nav">
         <li class="<%= active?(root_path) %>">
-          <%= link_to "Home", root_path %>
+          <%= link_to '<i class="fas fa-home"></i>&nbsp;Home'.html_safe, root_path %>
         </li>
         <li class="<%= active?(posts_path) %>">
           <%= link_to "Time entries", posts_path %>
