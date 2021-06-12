@@ -6,24 +6,31 @@
         <li class="<%= active?(root_path) %>">
           <%= link_to '<i class="fas fa-home"></i>&nbsp;Home'.html_safe, root_path %>
         </li>
-        <li class="<%= active?(posts_path) %>">
-          <%= link_to "Time entries", posts_path %>
-        </li>
-        <%= render 'shared/audit_log_tab' if policy(AuditLog).index? %>
-        <li class="<%= active?(new_post_path) %>">
-          <%= link_to "Request overtime", new_post_path, id: 'new_post_from_nav' %>
-        </li>
+
+        <% if is_admin? %>
+          <li class="<%= active?(audit_logs_path) %>">
+            <%= link_to '<i class="fas fa-list"></i>&nbsp;Audit log'.html_safe, audit_logs_path, id: 'audit_logs_from_nav' %>
+          </li>
+        <% else %>
+          <li class="<%= active?(posts_path) %>">
+            <%= link_to '<i class="fas fa-list"></i>&nbsp;Time entries'.html_safe, posts_path %>
+          </li>
+          <li class="<%= active?(new_post_path) %>">
+            <%= link_to '<i class="fas fa-file"></i>&nbsp;Request overtime'.html_safe, new_post_path, id: 'new_post_from_nav' %>
+          </li>
+        <% end %>
+
       </ul>
     </div>
     <div class="uk-navbar-right">
       <ul class="uk-navbar-nav">
         <% if is_admin? %>
           <li class="uk-active">
-            <%= link_to 'Admin Dashboard', admin_root_path %>
+            <%= link_to '<i class="fas fa-cogs"></i>&nbsp;Admin Dashboard'.html_safe, admin_root_path %>
           </li>
         <% end %>
         <li class="uk-active">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to 'Logout&nbsp;<i class="fas fa-sign-out-alt"></i>'.html_safe, destroy_user_session_path, method: :delete %>
         </li>
       </ul>
     </div>
