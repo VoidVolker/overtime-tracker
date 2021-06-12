@@ -17,4 +17,3 @@ class AuditLog < ApplicationRecord
       self.ended = Date.today
     end
 end
-Added update callback for audit log when it status changed to confirmed
