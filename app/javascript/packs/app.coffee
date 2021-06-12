@@ -29,7 +29,7 @@ class HomePage
                                 Notification 'danger', 'Post approving failed'
                     )
         # For admin
-        else if approvalsCnt.length is 1
+        else if approvalsCnt.length > 0
             approvals = $ '.approval', approvalsCnt
             for approval in approvals
                 approveBtn = $ '.approve-post', approval
