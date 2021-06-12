@@ -8,6 +8,8 @@ class AuditLog < ApplicationRecord
 
   before_update :set_ended
 
+  scope :by_start_date, -> { order(:started) }
+
   def self.started_init_value
     Date.today.beginning_of_week.last_week
   end
