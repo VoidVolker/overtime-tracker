@@ -6,7 +6,7 @@ namespace :notification do
     msg = "Please log into the time tracking dashboard to submit your hours for yesterday: https://example.com"
     users = User.where(type: nil)
     users.each do |user|
-      # AuditLog.create!(user_id: user.id)
+      AuditLog.create!(user_id: user.id)
       Sms.send(number: user.phone, message: msg)
       # FakeSms.send(number: user.phone, message: msg)
     end

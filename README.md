@@ -16,8 +16,8 @@ Real world project example. Developed while completing RoR development guide.
 - [✓] Approval worflow
 - [✓] SMS Messages -> link to approval logtime (TODO: inegrate with Heroku scheduler and uncomment the code)
 - [✓] Admin dashboard
-- Email summary to managers for approval
-- Needs to be documented if employee did not log overtime
+- [✓] Email summary to managers for approval
+- [✓] Needs to be documented if employee did not log overtime
 
 ### Libraries
 
