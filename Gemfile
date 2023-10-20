@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.0.2'
 
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'pg', '~> 1.1'
@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rexml'
+gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,3 +54,4 @@ gem 'bourbon'
 gem 'pundit'
 gem 'twilio-ruby'
 gem 'kaminari'
+gem 'datetime_picker_rails'
