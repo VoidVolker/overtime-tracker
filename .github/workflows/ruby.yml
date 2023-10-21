@@ -35,3 +35,8 @@ jobs:
               with:
                   bundler-cache: true # runs 'bundle install' and caches installed gems automatically
             - run: bundle exec rake
+              env:
+                  # The hostname used to communicate with the PostgreSQL service container
+                  POSTGRES_HOST: postgres
+                  # The default PostgreSQL port
+                  POSTGRES_PORT: 5432
