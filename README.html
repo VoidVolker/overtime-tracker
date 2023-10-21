@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>overtime-tracker</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="overtime-tracker">overtime-tracker</h1>
+<p>Real world project example. Developed while completing RoR development guide.</p>
+<h2 id="initial-requirements">Initial requirements</h2>
+<h3 id="models">Models</h3>
+<ul>
+<li>[✓] Post -&gt; date:date, rationale:text</li>
+<li>[✓] User -&gt; Devise</li>
+<li>[✓] Admin -&gt; STI</li>
+<li>[✓] Auditlog - keep track of if a employee had overtime or not.</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>[✓] Approval worflow</li>
+<li>[✓] SMS Messages -&gt; link to approval logtime (TODO: inegrate with Heroku scheduler and uncomment the code)</li>
+<li>[✓] Admin dashboard</li>
+<li>[✓] Email summary to managers for approval</li>
+<li>[✓] Needs to be documented if employee did not log overtime</li>
+</ul>
+<h3 id="libraries">Libraries</h3>
+<p>Back end:</p>
+<ul>
+<li>[✓] FactoryBot</li>
+<li>[✓] Devise</li>
+<li>[✓] Administrate</li>
+<li>[✓] Twilio - sms</li>
+<li>[✓] Dotenv</li>
+<li>[✓] Capybara</li>
+<li>[✓] Pundit</li>
+<li>[✓] Kaminari</li>
+</ul>
+<p>Front end:</p>
+<ul>
+<li>[✓] UIKit</li>
+<li>[✓] FontAwesome</li>
+<li>[✓] jQuery</li>
+</ul>
+<h3 id="dev">Dev</h3>
+<p>Start server:</p>
+<pre><code>rails server
+</code></pre>
+<p>Start coffee-script watcher (webpacker coffee loader is broken):</p>
+<pre><code>coffee -c -b -M -w ./
+</code></pre>
+<p>Node requirements: v16. For &gt;v16 (due webpacker bugs):</p>
+<pre><code>export NODE_OPTIONS=--openssl-legacy-provider
+</code></pre>
+<h3 id="todo">ToDo</h3>
+<ul>
+<li>Refactor user association integration test in post_spec</li>
+<li>Refactor nav view</li>
+<li>Add user friendly error views</li>
+<li>Refactor table views to use universal helpers</li>
+</ul>
+<h2 id="cretendtials-for-twilio">Cretendtials for twilio</h2>
+<p><code>./.env</code></p>
+<pre><code>TWILIO_ACCOUNT_SID=YOURACCOUNTSID
+TWILIO_AUTH_TOKEN=YOURAUTHTOKEN
+TWILIO_PHONE_NUMBER=+11111111111
+</code></pre>
+
+        
+        
+    </body>
+    </html>

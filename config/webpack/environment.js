@@ -1,5 +1,6 @@
 const { environment } = require('@rails/webpacker')
-const coffee =  require('./loaders/coffee')
 
-environment.loaders.prepend('coffee', coffee)
+// Disable coffee loader due bug "this.getOptions is not a function"
+// const coffee =  require('./loaders/coffee')
+// environment.loaders.prepend('coffee', coffee)
 module.exports = environment

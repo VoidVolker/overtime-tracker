@@ -11,11 +11,10 @@ class HomePage
     constructor: ->
         confirmationsCnt = $ '#pending-confirmations'
         approvalsCnt = $ '#pending-approvals'
-
         # For employee
         if confirmationsCnt.length is 1
-            confirmations = $ '.confirmation', confirmationsCnt
-            for confirmation in confirmations
+            @confirmations = $ '.confirmation', confirmationsCnt
+            for confirmation in @confirmations
                 confirmationBtn = $ '.confirm-audit-log', confirmation
                 confirmationBtn.click ->
                     btn = @
@@ -30,8 +29,8 @@ class HomePage
                     )
         # For admin
         else if approvalsCnt.length > 0
-            approvals = $ '.approval', approvalsCnt
-            for approval in approvals
+            @approvals = $ '.approval', approvalsCnt
+            for approval in @approvals
                 approveBtn = $ '.approve-post', approval
                 approveBtn[0].label = $ '.uk-label', approval
                 approveBtn.click ->
@@ -60,7 +59,5 @@ window.Notification = Notification = (type, msg, timeout = Application.default.n
         pos: 'top-center'
         timeout: timeout
     )
-
-
 
 $ -> window.APP = new Application

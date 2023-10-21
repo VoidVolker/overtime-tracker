@@ -6,46 +6,63 @@ Real world project example. Developed while completing RoR development guide.
 
 ### Models
 
-- [✓] Post -> date:date, rationale:text
-- [✓] User -> Devise
-- [✓] Admin -> STI
-- [✓] Auditlog - keep track of if a employee had overtime or not.
+-   [✓] Post -> date:date, rationale:text
+-   [✓] User -> Devise
+-   [✓] Admin -> STI
+-   [✓] Auditlog - keep track of if a employee had overtime or not.
 
 ### Features
 
-- [✓] Approval worflow
-- [✓] SMS Messages -> link to approval logtime (TODO: inegrate with Heroku scheduler and uncomment the code)
-- [✓] Admin dashboard
-- [✓] Email summary to managers for approval
-- [✓] Needs to be documented if employee did not log overtime
+-   [✓] Approval worflow
+-   [✓] SMS Messages -> link to approval logtime (TODO: inegrate with Heroku scheduler and uncomment the code)
+-   [✓] Admin dashboard
+-   [✓] Email summary to managers for approval
+-   [✓] Needs to be documented if employee did not log overtime
 
 ### Libraries
 
 Back end:
-- [✓] FactoryBot
-- [✓] Devise
-- [✓] Administrate
-- [✓] Twilio - sms
-- [✓] Dotenv
-- [✓] Capybara
-- [✓] Pundit
-- [✓] Kaminari
+
+-   [✓] FactoryBot
+-   [✓] Devise
+-   [✓] Administrate
+-   [✓] Twilio - sms
+-   [✓] Dotenv
+-   [✓] Capybara
+-   [✓] Pundit
+-   [✓] Kaminari
 
 Front end:
-- [✓] UIKit
-- [✓] FontAwesome
-- [✓] jQuery
+
+-   [✓] UIKit
+-   [✓] FontAwesome
+-   [✓] jQuery
+
+### Dev
+
+Start server:
+
+    rails server
+
+Start coffee-script watcher (webpacker coffee loader is broken):
+
+    coffee -c -b -M -w ./
+
+Node requirements: v16. For >v16 (due webpacker bugs):
+
+    export NODE_OPTIONS=--openssl-legacy-provider
 
 ### ToDo
 
-- Refactor user association integration test in post_spec
-- Refactor nav view
-- Add user friendly error views
-- Refactor table views to use universal helpers
+-   Refactor user association integration test in post_spec
+-   Refactor nav view
+-   Add user friendly error views
+-   Refactor table views to use universal helpers
 
 ## Cretendtials for twilio
 
 `./.env`
+
 ```
 TWILIO_ACCOUNT_SID=YOURACCOUNTSID
 TWILIO_AUTH_TOKEN=YOURAUTHTOKEN
